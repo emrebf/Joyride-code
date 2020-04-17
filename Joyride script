@@ -1,0 +1,1445 @@
+# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define a = Character(_("Azu"), color="#ff66cc")
+define m = Character(_("Mom"), color="#66ffff")
+define t = Character(_("Ms. Octa"), color="#00cc66")
+define b = Character(_("Bartender"), color="#9900ff")
+define o = Character(_("Old lady"), color="#ffcc66")
+define slowdissolve = Dissolve(1.0)
+
+
+# The game starts here.
+
+label start:
+
+    scene black
+
+    scene black
+    with slowdissolve
+
+    scene classroom
+    show azu neutral at left
+    with slowdissolve
+
+    play music "school.mp3"
+ 
+
+    a "..."
+
+    t "...And you’ll notice that when a star dies, it sort of collapses in on itself..."
+    
+    t "Gravity will cause the atoms of the core of the star to retract..."
+
+    a "(hmm… I wonder what’s for dinner tonight…)"
+
+    t "Alright, anyways, before I forget I need to hand your report cards back to you! Good job on these, guys."
+
+    show azu frazzled at left
+
+    a "Aw, crap."
+
+    show teacher worried at right
+    with slowdissolve
+
+    t "Here’s yours, Azu… please see me after class."
+
+    hide teacher at right
+    with slowdissolve
+
+    show azu neutral at left
+
+    a "..."
+
+    show azu frazzled at left
+
+    a "Oh no… a D?? An F?? Another F??? Sheesh… I thought I did better…"
+
+    t "That’ll be all. Class dismissed!"
+
+    "*school bell rings*"
+
+    show teacher neutral at right
+    with slowdissolve
+
+    t "Azu?"
+
+    a "Yes, Ms. Octa?"
+
+    show teacher worried at right
+
+    t "You did not do particularly well on the last test… or the one before that… or the one before that."
+    
+    t "Did you want to talk about something?"
+
+    a "I dunno, I guess I’m just useless when it comes to studying."
+
+    t "There are lots of ways of studying. You should put a bit more effort into learning the material."
+
+    show azu mad at left
+
+    a "I do! Why does nobody think I put in effort?? Not everyone is good at memorizing stuff."
+
+    show teacher happy at right
+
+    t "Maybe you just haven’t found a studying method that suits you."
+    
+    t "Have you tried flash cards? Making notes? Having a friend quiz you?"
+
+    a "Yes, it just… never works. Ugh. I’m no good with school, Ms. Octa."
+
+    show teacher neutral at right
+
+    t "Well, Azu, you have to start thinking about your future - you’re a 4th year, after all."
+    
+    t "Have you looked into colleges yet? The school would be happy to assist with that."
+
+    show azu neutral at left
+
+    a "I don’t even really know what I want to do for a living. It’s all… happening so fast. I thought high school was supposed to be about enjoying yourself."
+
+    t "You can enjoy yourself while thinking about your future. I would strongly recommend you do."
+
+    show azu mad at left
+
+    a "Alright, fine… thanks anyway, Ms. Octa."
+
+    hide teacher neutral at right
+    with slowdissolve
+
+    a "(Ugh, I wish I could just disappear… mom is not gonna be happy with me.)"
+
+    a "(What’s the big deal about college, anyway? Lots of successful people don’t even finish college...)"
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    # These display lines of dialogue.
+
+    scene black
+    with slowdissolve
+
+    play music "bed.mp3"
+
+    "9:00 p.m., Azu's house."
+
+    scene bedroom
+    show azu neutral at left
+    with slowdissolve
+
+    # setting the opening scene
+
+
+    a "..."
+
+    m "*knocks on door*"
+
+    a "Come in."
+
+    show mom neutral at right
+    with slowdissolve
+
+    m "Hey, sweetie... I think we need to have a talk."
+
+    a "Okay... what about?"
+
+    show mom hopeful at right
+
+    m "Well, I saw your report card today and I’ve noticed your grades haven’t improved." 
+    
+    m "You talked about improving things but it’s clear you haven’t really made an effort."
+    
+    show azu frazzled at left
+
+    a "How am I not making an effort? It’s not my fault my teacher is a tough grader."
+
+    show mom worried at right
+
+    m "Azu, you are barely passing half of your classes and failing the others."
+
+    m "Is there something going on that you wanted to tell me about?"
+
+    a "No, mom. I don’t know what to tell you. I have been trying but you don’t understand how shitty my classes are."
+
+    a "I studied for 5 hours on Sunday before my test and I still got a D. The material we covered wasn’t even on the test."
+
+    m "That’s what you always say. How can every teacher possibly do the same thing?"
+
+    m "Either you need to try harder or I take away your phone again."
+
+    show azu mad at left
+
+    a "That’s such BS! Why do you think punishing me is going to change anything when it didn’t help last time?"
+
+    show mom mad at right
+
+    m "Because you refuse to focus on school, you spend all day on your phone, you don’t care about how this is going to affect your chances of getting into college, you don’t care about anything!"
+
+    a "Mom, I don’t even know what I want to do yet! I might not even go to college!"
+
+    m "And what, work in retail for the rest of your life? Is that what you want?"
+
+    m "You’re not going to be getting anywhere else if you keep this up."
+
+    a "I don’t know! Just get out please! I don’t want to talk about this anymore."
+
+    m "Fine. *takes phone* maybe you’ll change your mind when you can’t socialize anymore."
+
+    show azu frazzled at left
+
+    a "Are you kidding me?? I need my phone!!"
+
+    m "No, what you need is to focus on school. Goodnight, Azu."
+
+    hide mom at right
+    with slowdissolve
+
+    show azu mad at left
+
+    a "(What the hell, this is such BS! What am I supposed to do without my phone?!)"
+
+    a "..."
+
+    show azu neutral at left
+
+    a "(I wonder...)"
+
+    a "(Maybe I could go somewhere...?)"
+
+    #this is Azu's first choice. She can either choose to go to the bar or head to the park.
+    #this is also the first iteration of the choice she makes, so before she decides her second destination,
+    #which, incidentally, could be one of these first two destinations.
+
+    menu:
+
+        "BAR":
+            jump choice1_bar
+
+        "PARK":
+            jump choice1_park
+    
+
+label choice1_bar:
+
+    $ menu_flag = True
+
+    scene bar
+    show azu neutral at left
+    with slowdissolve
+
+    play music "jazz.mp3"
+
+    a "(sigh...what the heck am I doing...I guess it’s too late to turn back now.)"
+
+    show bartender neutral at right
+    with slowdissolve
+
+    a "I’d like a beer, please."
+
+    b "Do you have ID?"
+
+    a "Erm, I actually left it at home."
+
+    b "Nice try. You look a bit young to be drinking."
+
+    show azu frazzled at left
+
+    a "Aw, come on! Not even a little sip?"
+
+    b "Rules are rules."
+
+    a "Dang it… well, I tried."
+
+    b "What is someone your age doing here, anyway? Shouldn’t you be at the movies or the arcade or something with friends?"
+
+    show azu neutral at left
+
+    a "No… I mean, I was talking to my friend until my mom took my phone away. I wasn’t really gonna do much tonight anyway."
+
+    b "But don’t you think it’s inappropriate for a teenager to be at a bar by herself?"
+
+    show azu frazzled at left
+
+    a "Hey, mind your own business! I’ll be 18 in a couple of months, I’m old enough to make my own decisions."
+
+    b "Oh, so you’re one of those…"
+
+    show azu mad at left
+
+    a "I’m what? What is “one of those”? You better not be talking to me."
+
+    show bartender surprised at right
+
+    b "You have a pretty big mouth on you, you know that? You shouldn’t be so short with people, it’s not going to get you very far."
+
+    a "Oh yeah, and what would you know about getting far? You’re just a bartender."
+
+    b "Ooh, ouch. Got me there. Frankly, I may have wound up in this position because I was a lot like you when I was younger."
+
+    show azu happy at left
+
+    a "*snort* sure, buddy. Whatever you say."
+
+    b "No, really. I wasn’t a great person when I was an adolescent."
+
+    show azu neutral at left
+    
+    b "I fought a lot with my parents, didn’t try in school, didn’t respect anyone, and now I’m a humble bartender." 
+    
+    b "I could’ve been a lot more if I cared about things more."
+
+    show azu mad at left
+
+    a "Oh no, don’t pull this “I was just like you” bullshit on me, I fucking hate when people say that."
+
+    a "You don’t know me or my life so don’t just assume I’m anything like you or going to turn out like you."
+
+    a "It makes you sound incredibly pretentious and not to mention, plain fucking rude!"
+
+    show bartender surprised at right
+
+    b "Woah, woah, okay, I’m sorry I offended you. I was trying to give some insight."
+
+    a "Well, don’t. I’ve had enough of adults trying to boss me around and treat me like a little kid."
+
+    show bartender neutral at right
+
+    b "Did your mother boss you around?"
+
+    a "Well… she kinda did, yeah. She took my phone even when I tried to explain something to her."
+
+    b "What were you explaining?"
+
+    a "I was explaining why I haven’t been getting good grades in school."
+
+    a "I have genuinely been trying pretty hard, but for some reason the material doesn’t stick, and when I try to remember it during an exam my mind goes blank."
+
+    a " I don’t know why this keeps happening. My friend is always getting straight A’s and here I am flunking almost half of my courses."
+
+    b "Have you tried talking about this problem to her before?"
+
+    a "Yes, I…"
+
+    show azu frazzled at left
+    
+    a "hmm… actually, maybe I haven’t. But when I brought it up tonight she just brushed it off."
+
+    b "Maybe she didn’t want to listen because you were talking to her in a certain tone."
+
+    b "If you say something in a particular way, it may not matter what you are saying, because tone can play a pretty big role in speech."
+
+    show azu neutral at left
+
+    a "Maybe… I guess I was generally in a bad mood and didn’t want to talk to anyone."
+
+    b "You know, maybe you should really talk to her about your problems with studying."
+
+    b "I’m sure if you talked to her while you were both calm, the conversation would go better."
+
+    a "I could, but I just don’t really like talking to my mom about this stuff."
+    
+    a "It’s like, she already deals with a lot being a single parent, so I don’t want to add another thing to worry about... does that make sense?"
+
+    b "Of course it makes sense. But… you’re here. Don’t you think you leaving the house at this hour would worry her?"
+
+    show azu frazzled at left
+
+    a "That was just because I was mad. Of course I’m gonna go back. I just needed to be out of the house for a bit, that’s all."
+
+    b "Well, I suggest you leave, because like I said, not a great place for a 17-year-old to hang around."
+
+    show azu neutral at left
+
+    a "I mean, I couldn’t order any alcohol so there’s not much else I can do anyway."
+
+    b "Okay, well… have a good night then. Sorry about earlier."
+
+    a "It’s okay, don’t worry about it. Honestly, it was just nice to have someone to talk to."
+
+    hide bartender at right
+    with slowdissolve
+
+    a "(I shouldn’t have been so rude to him… he was only trying to be nice, after all…)"
+
+    menu:
+
+        "PARK":
+            jump choice2_park
+
+        "HOME":
+            jump ending2
+
+
+label choice2_park:
+
+    $ menu_flag = True
+
+    scene park
+    show azu neutral at left
+    with slowdissolve
+
+    play music "night.mp3"
+
+    a "..."
+
+    a "Wow, the lake looks so nice..."
+
+    show azu happy at left
+
+    a "Aww, what cute birds..."
+
+    a "I wish I had some bread or crackers or something..."
+
+    show oldlady neutral at right
+    with slowdissolve
+    
+    o "You like feeding the birds too?"
+
+    a "Haha, well I only just wanted to try it again. I last fed birds when I was little."
+
+    o "They like bread crumbs, you should try feeding them some more."
+
+    a "Uh, okay. *tosses some more*"
+
+    show oldlady happy at right
+
+    o "Aren’t they cute? The way they bob up and down to peck at the bread is so precious."
+
+    a "Yeah, it’s cute."
+
+    o "If you don’t mind me asking, shouldn’t you be out with some friends and not feeding some birds with an old woman?"
+    
+    show azu mad at left
+
+    a "Hey, don’t be rude! Of course I have friends, I just happened to not go out tonight."
+
+    show oldlady surprised at right
+
+    o "I was only joking! I’m sorry."
+
+    show azu frazzled at left
+
+    a "It’s… it’s okay. I overreacted. I had a rough day."
+
+    show oldlady neutral at right
+
+    o "Well, you can tell me about it if you’d like."
+
+    a "...If you really wanna know, I got a terrible report card… I hate school so much…"
+
+    o "Oh dear. That’s not good. Why the bad marks?"
+
+    show azu neutral at left
+
+    a "I dunno… I’m just so over school. Whatever I try doesn’t work."
+
+    o "What doesn’t work?"
+
+    a "Whenever I study! It doesn’t work. I don’t know why I have so much trouble."
+
+    o "Haha, ahh… to be young."
+
+    a "What?"
+
+    o "Well, I just mean that young people are so stressed out these days."
+    
+    o "I don’t understand why - life has a way of working out, even if you don’t feel like it will."
+
+    show azu mad at left
+
+    a "That’s what you think. You grew up years ago and don’t have to face the problems my generation has to face."
+
+    o "Every generation has its own problems, dear. The difference lies in how we handle it."
+
+    a "You know what, just because you’re older than me doesn’t mean you’re wiser. And it doesn’t mean you can talk down to me."
+
+    show oldlady surprised at right
+
+    o "I wasn’t trying to talk down to you, dear - just offering my perspective. Do you just want me to listen and not say anything?"
+
+    show azu frazzled at left
+
+    a "I - no, it’s ok. Sorry."
+
+    show oldlady neutral at right
+
+    o "No apology necessary. What problems does your generation face?"
+
+    a "Well… I dunno… a lot of things, I guess. It feels like people expect me to carry the weight of the world on my shoulders."
+
+    o "But you are! The world relies on you to make a change."
+
+    show azu mad at left
+
+    a "That’s exactly what I mean! I hate it when people say that! It doesn’t do me any good."
+
+    o "It’s true, though. You don’t just live for yourself, you know -"
+    
+    o "- there are other people on this planet that need guidance, assistance, leadership - everyone in your generation has something to offer."
+
+    a "Well, not me. I can’t even do well in school."
+
+    show oldlady surprised at right
+
+    o "Hmm. What do you want to be when you’re older?"
+
+    a "I don’t know. I can’t even imagine myself in 5 years - oh wait, I think I can, actually."
+    
+    a "I’ll live in a small apartment working a minimum wage job. And that’ll probably be my entire life."
+
+    show oldlady happy at right
+
+    o "Minimum wage isn’t the be all end all! Lots of people work those jobs, you know."
+
+    a "I know, but I don’t want to be one of those people."
+
+    show oldlady surprised at right
+
+    o "You don’t want to be anything?"
+
+    show azu neutral at left
+
+    a "I do! I...I dunno. I dunno what it is I want, but I want to find out what it is I want."
+
+    o "How are you going to do that?"
+
+    a "Who knows."
+
+    show oldlady neutral at right
+
+    o "…"
+
+    a "…"
+
+    o "Well I can't say that your problem is an uncommon one."
+
+    a "I guess not."
+
+    o "A lot of young people feel lost. There must be a lot of pressure on you to have the perfect life that your parents wants you to have."
+
+    a "I just have a mom, actually. My mom nags me all the time about my grades. Whenever I get a bad mark on a test she's always on my case."
+
+    a "So you can imagine that we have those talks a lot."
+
+    o "Why are your grades such a problem for you though?"
+
+    a "Because I'm useless, I guess? I don't know."
+
+    show oldlady surprised at right
+
+    o "Of course you aren't useless!"
+
+    show azu mad at left
+
+    a "Oh yeah? How would you know?"
+
+    o "Because nobody is useless. We all have a reason for being here."
+
+    a "Well, I'd appreciate it if the universe could let me know my reason for being here soon."
+
+    show oldlady neutral at right
+
+    o "Ah, it doesn't work like that, silly! At least, that's not how it worked for me."
+
+    show azu neutral at left
+
+    a "What do you mean?"
+
+    o "Well, I didn't know what I wanted to do with my life right away. I didn't know what purpose I could serve."
+
+    o "But sometimes you just have to seek that sort of thing out."
+
+    o "I was so lost and alone, and my hobbies were the only ways I could find comfort."
+
+    a "Hobbies?"
+
+    o "Well, I actually took up painting when I was a teenager. Wasn't serious about it before that but I ended up loving it."
+
+    o "Painting gave me purpose. My art was a part of me, and I used it to express the deepest parts of myself, like many artists do."
+
+    o "I didn't make a whole lot of money off of it, but it made me happy."
+
+    a "..."
+
+    o "All I'm saying is, you should try new things. You never know what you'll end up liking."
+
+    o "It could be anything - it could be cooking, gardening, knitting, or anything you'd like."
+
+    a "I have hobbies... but I don't know if I want to pursue them. My mom would have wanted me to study something that's stable and makes money."
+
+    a "Like engineering or nursing, or whatever. I don't think she'd be thrilled about art school in any case."
+
+    show oldlady surprised at right
+
+    o "Why not? Because it doesn't make money?"
+
+    a "Well no, she's just... I dunno... probably worried about me, I guess."
+
+    show oldlady neutral at right
+
+    o "I'm sure your mother is very good to you."
+
+    show azu happy at left
+
+    a "Yeah, she's a great mom..."
+
+    show azu frazzled at left
+
+    a "She's just hard to deal with sometimes..."
+
+    o "...Well… I don’t have much to say, but… I think things will work out for you."
+
+    a "Why do you think so? You don’t think I’m going to become a failure?"
+
+    o "I don’t think so. Not everyone has it easy at first - lots of people your age have doubts about themselves. It’s only natural."
+
+    o "I’m sure one day you will realise your full potential. A person with as much spirit as you will achieve things."
+
+    o "Even if you don’t believe it right now. And the people around you will support you."
+
+    show azu neutral at left
+
+    a "I don’t really have many people. I have my mom and a couple of friends, and that’s about it, I guess."
+
+    o "Why does it matter how many people you have? The number of people you know doesn’t matter - as long as the people around you support you and love you."
+
+    a "That’s what adults say all the time, but… how do I know those people will always support me?"
+
+    o "That’s where you have to trust people."
+
+    a "… I guess so…"
+
+    o "I hope I was able to make your night a bit better, heh heh. I hate to leave you, but I need to go soon. Will you be alright?"
+
+    a "Yeah, I’ll be fine...thanks."
+
+    o "No worries. I hope you have a good night."
+
+    a "You too."
+
+    hide oldlady at right
+    with slowdissolve
+
+    a "(She was actually pretty understanding… I wasn’t expecting that…)"
+
+    a "(Hmm… well, what now? I guess I can head back.)"
+
+    jump ending1
+
+label choice1_park:
+
+    $ menu_flag = False
+
+    scene park
+    show azu neutral at left
+    with slowdissolve
+
+    play music "night.mp3"
+
+    a "..."
+
+    a "Wow, the lake looks so nice..."
+
+    show azu happy at left
+
+    a "Aww, what cute birds..."
+
+    a "I wish I had some bread or crackers or something..."
+
+    show oldlady neutral at right
+    with slowdissolve
+    
+    o "You like feeding the birds too?"
+
+    a "Haha, well I only just wanted to try it again. I last fed birds when I was little."
+
+    o "They like bread crumbs, you should try feeding them some more."
+
+    a "Uh, okay. *tosses some more*"
+
+    show oldlady happy at right
+
+    o "Aren’t they cute? The way they bob up and down to peck at the bread is so precious."
+
+    a "Yeah, it’s cute."
+
+    o "If you don’t mind me asking, shouldn’t you be out with some friends and not feeding some birds with an old woman?"
+    
+    show azu mad at left
+
+    a "Hey, don’t be rude! Of course I have friends, I just happened to not go out tonight."
+
+    show oldlady surprised at right
+
+    o "I was only joking! I’m sorry."
+
+    show azu frazzled at left
+
+    a "It’s… it’s okay. I overreacted. I had a rough day."
+
+    show oldlady neutral at right
+
+    o "Well, you can tell me about it if you’d like."
+
+    a "...If you really wanna know, I got a terrible report card… I hate school so much…"
+
+    o "Oh dear. That’s not good. Why the bad marks?"
+
+    show azu neutral at left
+
+    a "I dunno… I’m just so over school. Whatever I try doesn’t work."
+
+    o "What doesn’t work?"
+
+    a "Whenever I study! It doesn’t work. I don’t know why I have so much trouble."
+
+    o "Haha, ahh… to be young."
+
+    a "What?"
+
+    o "Well, I just mean that young people are so stressed out these days."
+    
+    o "I don’t understand why - life has a way of working out, even if you don’t feel like it will."
+
+    show azu mad at left
+
+    a "That’s what you think. You grew up years ago and don’t have to face the problems my generation has to face."
+
+    o "Every generation has its own problems, dear. The difference lies in how we handle it."
+
+    a "You know what, just because you’re older than me doesn’t mean you’re wiser. And it doesn’t mean you can talk down to me."
+
+    show oldlady surprised at right
+
+    o "I wasn’t trying to talk down to you, dear - just offering my perspective. Do you just want me to listen and not say anything?"
+
+    show azu frazzled at left
+
+    a "I - no, it’s ok. Sorry."
+
+    show oldlady neutral at right
+
+    o "No apology necessary. What problems does your generation face?"
+
+    a "Well… I dunno… a lot of things, I guess. It feels like people expect me to carry the weight of the world on my shoulders."
+
+    o "But you are! The world relies on you to make a change."
+
+    show azu mad at left
+
+    a "That’s exactly what I mean! I hate it when people say that! It doesn’t do me any good."
+
+    o "It’s true, though. You don’t just live for yourself, you know -"
+    
+    o "- there are other people on this planet that need guidance, assistance, leadership - everyone in your generation has something to offer."
+
+    a "Well, not me. I can’t even do well in school."
+
+    show oldlady surprised at right
+
+    o "Hmm. What do you want to be when you’re older?"
+
+    a "I don’t know. I can’t even imagine myself in 5 years - oh wait, I think I can, actually."
+    
+    a "I’ll live in a small apartment working a minimum wage job. And that’ll probably be my entire life."
+
+    show oldlady happy at right
+
+    o "Minimum wage isn’t the be all end all! Lots of people work those jobs, you know."
+
+    a "I know, but I don’t want to be one of those people."
+
+    show oldlady surprised at right
+
+    o "You don’t want to be anything?"
+
+    show azu neutral at left
+
+    a "I do! I...I dunno. I dunno what it is I want, but I want to find out what it is I want."
+
+    o "How are you going to do that?"
+
+    a "Who knows."
+
+    show oldlady neutral at right
+
+    o "…"
+
+    a "…"
+
+    o "Well I can't say that your problem is an uncommon one."
+
+    a "I guess not."
+
+    o "A lot of young people feel lost. There must be a lot of pressure on you to have the perfect life that your parents wants you to have."
+
+    a "I just have a mom, actually. My mom nags me all the time about my grades. Whenever I get a bad mark on a test she's always on my case."
+
+    a "So you can imagine that we have those talks a lot."
+
+    o "Why are your grades such a problem for you though?"
+
+    a "Because I'm useless, I guess? I don't know."
+
+    show oldlady surprised at right
+
+    o "Of course you aren't useless!"
+
+    show azu mad at left
+
+    a "Oh yeah? How would you know?"
+
+    o "Because nobody is useless. We all have a reason for being here."
+
+    a "Well, I'd appreciate it if the universe could let me know my reason for being here soon."
+
+    show oldlady neutral at right
+
+    o "Ah, it doesn't work like that, silly! At least, that's not how it worked for me."
+
+    show azu neutral at left
+
+    a "What do you mean?"
+
+    o "Well, I didn't know what I wanted to do with my life right away. I didn't know what purpose I could serve."
+
+    o "But sometimes you just have to seek that sort of thing out."
+
+    o "I was so lost and alone, and my hobbies were the only ways I could find comfort."
+
+    a "Hobbies?"
+
+    o "Well, I actually took up painting when I was a teenager. Wasn't serious about it before that but I ended up loving it."
+
+    o "Painting gave me purpose. My art was a part of me, and I used it to express the deepest parts of myself, like many artists do."
+
+    o "I didn't make a whole lot of money off of it, but it made me happy."
+
+    a "..."
+
+    o "All I'm saying is, you should try new things. You never know what you'll end up liking."
+
+    o "It could be anything - it could be cooking, gardening, knitting, or anything you'd like."
+
+    a "I have hobbies... but I don't know if I want to pursue them. My mom would have wanted me to study something that's stable and makes money."
+
+    a "Like engineering or nursing, or whatever. I don't think she'd be thrilled about art school in any case."
+
+    show oldlady surprised at right
+
+    o "Why not? Because it doesn't make money?"
+
+    a "Well no, she's just... I dunno... probably worried about me, I guess."
+
+    show oldlady neutral at right
+
+    o "I'm sure your mother is very good to you."
+
+    show azu happy at left
+
+    a "Yeah, she's a great mom..."
+
+    show azu frazzled at left
+
+    a "She's just hard to deal with sometimes..."
+
+    o "...Well… I don’t have much to say, but… I think things will work out for you."
+
+    a "Why do you think so? You don’t think I’m going to become a failure?"
+
+    o "I don’t think so. Not everyone has it easy at first - lots of people your age have doubts about themselves. It’s only natural."
+
+    o "I’m sure one day you will realise your full potential. A person with as much spirit as you will achieve things."
+
+    o "Even if you don’t believe it right now. And the people around you will support you."
+
+    show azu neutral at left
+
+    a "I don’t really have many people. I have my mom and a couple of friends, and that’s about it, I guess."
+
+    o "Why does it matter how many people you have? The number of people you know doesn’t matter - as long as the people around you support you and love you."
+
+    a "That’s what adults say all the time, but… how do I know those people will always support me?"
+
+    o "That’s where you have to trust people."
+
+    a "… I guess so…"
+
+    o "I hope I was able to make your night a bit better, heh heh. I hate to leave you, but I need to go soon. Will you be alright?"
+
+    a "Yeah, I’ll be fine...thanks."
+
+    o "No worries. I hope you have a good night."
+
+    a "You too."
+
+    hide oldlady at right
+    with slowdissolve
+
+    a "(She was actually pretty understanding… I wasn’t expecting that…)"
+
+    a "(Hmm… well, what now? I guess I can head back.)"
+
+    menu:
+
+        "BAR":
+            jump choice2_bar
+
+        "HOME":
+            jump ending2
+
+
+label choice2_bar:
+
+    $ menu_flag = True
+
+    scene bar
+    show azu neutral at left
+    with slowdissolve
+
+    play music "jazz.mp3"
+
+    a "(sigh...what the heck am I doing...I guess it’s too late to turn back now.)"
+
+    show bartender neutral at right
+    with slowdissolve
+
+    a "I’d like a beer, please."
+
+    b "Do you have ID?"
+
+    a "Erm, I actually left it at home."
+
+    b "Nice try. You look a bit young to be drinking."
+
+    show azu frazzled at left
+
+    a "Aw, come on! Not even a little sip?"
+
+    b "Rules are rules."
+
+    a "Dang it… well, I tried."
+
+    b "What is someone your age doing here, anyway? Shouldn’t you be at the movies or the arcade or something with friends?"
+
+    show azu neutral at left
+
+    a "No… I mean, I was talking to my friend until my mom took my phone away. I wasn’t really gonna do much tonight anyway."
+
+    b "But don’t you think it’s inappropriate for a teenager to be at a bar by herself?"
+
+    show azu frazzled at left
+
+    a "Hey, mind your own business! I’ll be 18 in a couple of months, I’m old enough to make my own decisions."
+
+    b "Oh, so you’re one of those…"
+
+    show azu mad at left
+
+    a "I’m what? What is “one of those”? You better not be talking to me."
+
+    show bartender surprised at right
+
+    b "You have a pretty big mouth on you, you know that? You shouldn’t be so short with people, it’s not going to get you very far."
+
+    a "Oh yeah, and what would you know about getting far? You’re just a bartender."
+
+    b "Ooh, ouch. Got me there. Frankly, I may have wound up in this position because I was a lot like you when I was younger."
+
+    show azu happy at left
+
+    a "*snort* sure, buddy. Whatever you say."
+
+    b "No, really. I wasn’t a great person when I was an adolescent."
+
+    show azu neutral at left
+    
+    b "I fought a lot with my parents, didn’t try in school, didn’t respect anyone, and now I’m a humble bartender." 
+    
+    b "I could’ve been a lot more if I cared about things more."
+
+    show azu mad at left
+
+    a "Oh no, don’t pull this “I was just like you” bullshit on me, I fucking hate when people say that."
+
+    a "You don’t know me or my life so don’t just assume I’m anything like you or going to turn out like you."
+
+    a "It makes you sound incredibly pretentious and not to mention, plain fucking rude!"
+
+    show bartender surprised at right
+
+    b "Woah, woah, okay, I’m sorry I offended you. I was trying to give some insight."
+
+    a "Well, don’t. I’ve had enough of adults trying to boss me around and treat me like a little kid."
+
+    show bartender neutral at right
+
+    b "Did your mother boss you around?"
+
+    a "Well… she kinda did, yeah. She took my phone even when I tried to explain something to her."
+
+    b "What were you explaining?"
+
+    a "I was explaining why I haven’t been getting good grades in school."
+
+    a "I have genuinely been trying pretty hard, but for some reason the material doesn’t stick, and when I try to remember it during an exam my mind goes blank."
+
+    a " I don’t know why this keeps happening. My friend is always getting straight A’s and here I am flunking almost half of my courses."
+
+    b "Have you tried talking about this problem to her before?"
+
+    a "Yes, I…"
+
+    show azu frazzled at left
+    
+    a "hmm… actually, maybe I haven’t. But when I brought it up tonight she just brushed it off."
+
+    b "Maybe she didn’t want to listen because you were talking to her in a certain tone."
+
+    b "If you say something in a particular way, it may not matter what you are saying, because tone can play a pretty big role in speech."
+
+    show azu neutral at left
+
+    a "Maybe… I guess I was generally in a bad mood and didn’t want to talk to anyone."
+
+    b "You know, maybe you should really talk to her about your problems with studying."
+
+    b "I’m sure if you talked to her while you were both calm, the conversation would go better."
+
+    a "I could, but I just don’t really like talking to my mom about this stuff."
+    
+    a "It’s like, she already deals with a lot being a single parent, so I don’t want to add another thing to worry about... does that make sense?"
+
+    b "Of course it makes sense. But… you’re here. Don’t you think you leaving the house at this hour would worry her?"
+
+    show azu frazzled at left
+
+    a "That was just because I was mad. Of course I’m gonna go back. I just needed to be out of the house for a bit, that’s all."
+
+    b "Well, I suggest you leave, because like I said, not a great place for a 17-year-old to hang around."
+
+    show azu neutral at left
+
+    a "I mean, I couldn’t order any alcohol so there’s not much else I can do anyway."
+
+    b "Okay, well… have a good night then. Sorry about earlier."
+
+    a "It’s okay, don’t worry about it. Honestly, it was just nice to have someone to talk to."
+
+    hide bartender at right
+    with slowdissolve
+
+    a "(I shouldn’t have been so rude to him… he was only trying to be nice, after all…)"
+
+    jump ending1
+
+label ending1:
+
+    scene black
+    with slowdissolve
+
+    scene bedroom
+    show azu frazzled at left
+    with slowdissolve
+
+    play music "night.mp3"
+
+    a "(Ah...dammit… I’m definitely going to be in trouble now…)"
+
+    a "(I’ll try to sneak upstairs…maybe mom is asleep...)"
+
+    a "(Ah, looks like I made it...heh heh…)"
+
+    a "(I wonder if she’s been worried about me…)"
+
+    show azu sad at left
+
+    a "(Why am I such an idiot? Those people I met were actually right… I just hope Mom doesn’t hate me now… what’s even going to happen tomorrow?)"
+
+    a "(I’m such a screw-up. Why am I like this?)"
+
+    a "(I make stupid impulsive decisions all the time. And I’m not good for anything. All I do is worry my mom and act like a nuisance.)"
+
+    a "(I’m going to have to face her tomorrow whether I want to or not…)"
+
+    scene black
+    hide azu at left
+    with slowdissolve
+
+    scene classroom
+    show azu neutral at left
+    with slowdissolve
+
+    a "…"
+
+    t "...Our researchers say that our ancestors could have lived on Mars, but who knows?"
+    
+    t "It could have been eons ago, but there have been signs of life on Mars that is just too curious to ignore…"
+
+    a "(sigh... what am I gonna do…)"
+
+    t "...Well, nevermind that. Our biggest concern right now is finding other planets that are inhabitable."
+    
+    t "So, if anything happens to our galaxy, we will have someplace to go!"
+
+    t "We’ve been having problems with space pirates in recent years, and I guess you can never be too careful!"
+
+    a "(I should just tell mom what’s been happening, shouldn’t I?)"
+
+    t "Alright, then, class dismissed."
+
+    "*school bell rings*"
+
+    a "Oh, Ms. Octa… may I have a word with you?"
+
+    show teacher neutral at right
+    with slowdissolve
+
+    t "Sure, Azu, what’s the matter?"
+
+    a "Are you okay with me talking about personal things?"
+
+    t "Of course, Azu. It’s what I’m here for. What seems to be troubling you?"
+
+    a "Well, you know how I didn’t do well on my report card?"
+
+    a "I dunno, I think I got a little bit too heated yesterday, and I was refusing to address my real issues. Or maybe I didn’t even know what my real issues were."
+
+    a "I’ve just been feeling lost lately, I don’t know why. School is hard, life is hard, and I dunno… I feel like I hurt everyone I talk to."
+
+    a "I got into a big argument with my mom last night, so I left the house all mad and stuff."
+    
+    a "Looking back on it I was being stupid… but it’s just that, I don’t know how to help myself."
+
+    show azu sad at left
+
+    a "I just get angry for no reason, and then I hurt people. I don’t want to hurt people anymore. I just want to be useful."
+
+    a "Someone that people like, I guess. Someone who people would miss when I’m gone."
+
+    a "And I feel like… I might never be one of those people. Like I might not get the chance to be that person."
+
+    a "Please tell me there are other options for going to college and all that. I can barely fathom the idea of going to college. It’s too depressing to think about."
+
+    show teacher worried at right
+
+    t "Oh, Azu..."
+
+    a "I’m just… not cut out for school. I don’t know what I’m cut out for."
+
+    t "Azu, I had no idea you felt this negatively about yourself. You really believe you hurt others?"
+
+    a "I don’t know but I’m just rude and abrasive. I can’t help myself, I just have all this anger inside of me. It’s like a disease."
+
+    a "I just feel like I’ll never be useful to anyone. I’ll never be useful for anything."
+
+    a "I can’t even do well in school."
+
+    t "I… apologise if something I said yesterday was discouraging to you. That’s the opposite of what I aim to do as a teacher."
+
+    t "Maybe you should make an appointment with the guidance counsellor. Or maybe even look into seeing a therapist. They can really help you, you know."
+
+    a "Maybe, but… I dunno. It’s not really what I want to do right now."
+
+    t "What do you want to do?"
+
+    a "I think I just want to make things right with my mom. But I don’t know how."
+
+    t "Just talk to her. Trust me, she will appreciate your honesty. As a parent myself, I would want my kids to be honest about the way they’re feeling."
+    
+    t "Don’t you think your mother would want that as well?"
+
+    a "Yeah, I think so. It’s just that I don’t want to worry her. I’m such a screw-up already and I feel like I’m already a huge burden. I don’t know what to do."
+
+    t "Just sit her down and talk to her. When you feel ready. She will understand and try to help you in every way she can. Is she normally supportive of you?"
+
+    a "Yes, she is… she’s always been a great mom."
+
+    show teacher happy at right
+
+    t "Then be honest with her. You’ll be glad that you did."
+
+    a " Alright… I’ll try talking to her tonight. Thank you, Ms. Octa."
+
+    show teacher worried at right
+
+    t "I’m here if you need me, Azu."
+
+    scene black
+    hide teacher at right
+    hide azu at left
+    with slowdissolve
+
+    scene living
+    show azu neutral at left
+    with slowdissolve
+
+    play music "bed.mp3"
+
+    a "Um...mom? I’m home…"
+
+    a "…."
+
+    a "Are you here…?"
+
+    show mom worried at right
+    with slowdissolve
+
+    a "Mom!"
+
+    m "I’ve been so worried…"
+
+    show azu sad at left
+
+    a "Mom...I… I’m sorry, okay?"
+
+    m "Where did you go last night?"
+
+    a "Well, I… took the car out…"
+
+    show mom mad at right
+
+    m "You what??"
+
+    a "Mom, I -"
+
+    m "You’re not even a licensed driver!! Do you know how incredibly dangerous that is?!"
+
+    a "Mom -"
+
+    m "You could’ve died!!"
+
+    a "Mom, I… I’m really sorry… I know it was stupid…"
+
+    m "It definitely was. Did you even consider how I would feel?"
+
+    a "Not in the moment, no… I actually wanted to talk about that."
+
+    a "Mom, I’ve been feeling really down lately and I think it’s been affecting my grades."
+
+    a " Maybe my grades aren’t the main problem like I initially thought they were... "
+
+    a "I think I just feel really bad about myself. I don’t really know where to start. I guess recently I feel like I’ve been treating everyone really badly."
+
+    a "Sometimes I don’t even realise what I’m saying to people. I just say what I’m feeling and don’t stop to consider the repercussions they would have."
+
+    a "No matter who I talk to… if they say something I don’t like then I lash out at them… I don’t want to be that person anymore. I don’t want to be me anymore."
+
+    show mom worried at right
+
+    m "Have you been feeling like this for a long time?"
+
+    a "Maybe subconsciously. I’ve been miserable for so long. And I think the way I treat people doesn’t help."
+
+    m "Why do you think you treat people this way?"
+
+    show azu neutral at left
+
+    a "Because, I… I can’t help it sometimes. I just feel… angry."
+
+    m "Why do you feel angry?"
+
+    a "I don’t know."
+
+    show azu sad at left
+
+    a "I feel like… that sometimes I’m drowning."
+
+    a "Have you ever felt like no matter what you try to be happy, nothing ever works?"
+
+    m "Yes… I’ve felt that way before. I’m sure everyone feels that way at one point or another."
+
+    a "Are you sure? Everyone seems fine in their lives. I feel like I’m just a miserable person who will never amount to anything."
+
+    a "I don’t understand how people my age have all these dreams and directions that they want to go in. I wish I had that."
+
+    m "Azu…"
+
+    m "I understand what you mean…"
+
+    a "Mom, I just…."
+
+    a "I’m really sorry…"
+
+    m "Azu, don’t cry. I forgive you."
+
+    a "How can you forgive me for being such a horrible daughter?"
+
+    show mom hopeful at right
+
+    m "You’re not a horrible daughter. You’re my favourite person in the world and I would do anything for you. Do you realise that?"
+
+    a "Yes, I just have no idea why… I’m a terrible person…"
+
+    m "Because although you can be abrasive at times, you have a good heart and you want to do good. I can see that in you."
+
+    m "You’re a troubled person, but you do care about people. Don’t you think I know you?"
+
+    a "I do. I just don’t think I deserve such a good mom."
+
+    m "You deserve the world, Azu."
+
+    a "I don’t know what I did to deserve this kindness. I don’t know if I’ve ever done anything to deserve it."
+
+    m "Maybe we can get you some help for your self-esteem issues? It’s extremely normal to experience at your age."
+
+    a "I dunno, maybe… I just feel so lost and miserable."
+
+    show mom worried at right
+
+    m "Well, I’m really just glad that you finally came to me. I’ve been concerned about you for a long while. I could tell you didn’t feel like yourself."
+
+    m "That’s why when I saw your report card I asked if you wanted to talk."
+
+    m "Do you feel happy that you came to me?"
+
+    a "I just don’t want to worry you."
+
+    m "If I’m helping you, I think I can handle it. And it helps to not take my car out at 9 p.m. without telling me."
+
+    show azu frazzled at left
+
+    a "Yeah, that was a really impulsive decision, I’ll admit."
+
+    show mom neutral at right
+
+    m "And because of that, you're grounded for 3 weeks."
+
+    a "Haha, yeah, that's fair..."
+
+    m "Want to come watch TV with me in my bed? We can talk about finding you a therapist tomorrow."
+
+    a "Sounds good. I’m pretty tired so I might fall asleep pretty fast."
+
+    m "That’s fine with me. Come on."
+
+    scene black
+    hide azu at left
+    hide mom at right
+    with slowdissolve
+
+    "Ending 1: True ending"
+
+    return
+
+label ending2:
+
+    scene black
+    with slowdissolve
+
+    scene living
+    show azu neutral at left
+    with slowdissolve
+
+    play music "bed.mp3"
+
+    a "..."
+
+    a "(I'll just try and sneak upstairs now, as quietly as possible..."
+
+    show mom mad at right
+    with slowdissolve
+
+    m "Where do you think you're going, young lady?"
+
+    show azu frazzled at left
+
+    a "Aw, drat."
+
+    m "What's the matter with you? Where have you been this past hour? Do you have any idea how worried I've been?"
+
+    show azu mad at left
+
+    a "Yeah, yeah, whatever."
+
+    m "Excuse me?"
+
+    a "Mom, do you even try to understand what I'm going through? It's like you don't even care sometimes."
+
+    m "Of course I care! Why do you think I was so concerned?"
+
+    a "I meant about how I feel. You don't care to learn anything about how I feel."
+
+    m "Well, you want to know how I feel, Azu?"
+
+    m "I feel sad that you betrayed my trust and took out the car, fully knowing I wouldn't like that."
+
+    m "That was extremely petty of you and you were just doing it to get back at me."
+
+    a "Maybe, but you were being really unfair."
+
+    m "I feel sad that my own daughter would do these things and not be able to see why she hurt me."
+
+    m "I'm also sad that she won't even talk to me these days. I can't get anything out of her without a snarky response."
+
+    m "I don't understand what it is I have to do to make you happy."
+
+    a "Maybe if you weren't nagging me about my grades all the time, it would be different. All you want to talk about is how terrible I'm doing."
+
+    m "I'm your mother! Am I not supposed to worry about you?"
+
+    a "I can handle myself, Mom! Seriously, what's the big deal if I want to be left alone?"
+
+    m "..."
+
+    show mom worried at right
+
+    m "You're right. I can't force anything out of you, can I? You'll only talk to me if you want to."
+
+    a "I'll talk about things if I feel like it."
+
+    m "Fine, Azu. Have it your way. You're grounded for a month, though. Feel free to talk to me whenever."
+
+    a "Mom, I -"
+
+    a "Wait, WHAT? A month?? That's way too long!"
+
+    m "I don't think it's long enough. I don't know how else to teach you right from wrong, at this point."
+
+    a "I think that that's overkill. I can't even go out now and see my friends??"
+
+    m "You probably will do that without my permission, anyway. I'm going to bed."
+
+    show azu frazzled at left
+
+    a "Mom,, I -"
+
+    m "Goodnight, Azu."
+
+    hide mom at right
+    with slowdissolve
+
+    a "..."
+
+    a "I suppose I could have handled that better..."
+
+    show azu mad at left
+
+    a "You know what, no. She's the one who doesn't know how to respect boundaries."
+
+    a "..."
+
+    show azu frazzled at left
+
+    a "No, I think I should have handled that better."
+
+    a "(sigh...)"
+
+    a "I don't know what I'm going to do..."
+
+    a "Maybe I'll try talking to her again tomorrow."
+
+    scene black
+    hide azu at left
+    with slowdissolve
+
+    "Ending 2: Bad ending"
+ 
+
+
+    # This ends the game.
+
+    return
